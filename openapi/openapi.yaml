@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: Dokumentasi API Mahasiswa
+  version: 1.0.0
+
+paths:
+  /api/index.php:
+    get:
+      summary: Ambil semua mahasiswa
+      responses:
+        '200':
+          description: sukses
+
+  /api/store.php:
+    post:
+      summary: Tambah data mahasiswa
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nim:
+                  type: string
+                nama:
+                  type: string
+                prodi:
+                  type: string
+      responses:
+        '200':
+          description: sukses
+
+  /api/update.php:
+    put:
+      summary: Perbarui data mahasiswa
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                nim:
+                  type: string
+                nama:
+                  type: string
+                prodi:
+                  type: string
+      responses:
+        '200':
+          description: sukses
+
+  /api/delete.php:
+    delete:
+      summary: Hapus data mahasiswa
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+      responses:
+        '200':
+          description: sukses
